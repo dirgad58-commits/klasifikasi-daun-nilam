@@ -57,8 +57,8 @@ html, body, [class*="css"] { font-family: 'Poppins', sans-serif; color: #1e293b;
 .header-leaf-decoration { position: absolute; right: 0px; top: -30px; height: 260px; object-fit: contain; opacity: 1; filter: drop-shadow(-15px 20px 20px rgba(0,0,0,0.6)); z-index: 1; transform: rotate(-5deg);}
 
 /* --- KARTU KONTEN POSTER --- */
-[data-testid="stVerticalBlockBorderWrapper"] { background: #ffffff !important; border-radius: 20px !important; border: 1px solid #e2e8f0 !important; box-shadow: 0 10px 25px rgba(0,0,0,0.05) !important; padding: 25px !important; position: relative; overflow: hidden; margin-top: 10px;}
-[data-testid="stVerticalBlockBorderWrapper"]::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 6px; background: #115e41; }
+[data-testid="column"] > div[data-testid="stVerticalBlock"] { background: #ffffff !important; border-radius: 20px !important; border: 1px solid #e2e8f0 !important; box-shadow: 0 10px 25px rgba(0,0,0,0.05) !important; padding: 25px !important; position: relative; overflow: hidden; margin-top: 10px;}
+[data-testid="column"] > div[data-testid="stVerticalBlock"]::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 6px; background: #115e41; }
 
 .panel-card { background: #ffffff; border-radius: 20px; border: 1px solid #e2e8f0; padding: 30px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); position: relative; overflow: hidden; margin-top: 10px;}
 .panel-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 6px; background: #115e41; }
@@ -232,24 +232,22 @@ with main_container:
     # --- POSTER BACKGROUND & OBJECTIVES SECTION ---
     col_bg1, col_bg2 = st.columns([1.2, 1], gap="large")
     with col_bg1:
-        with st.container(border=True):
-            st.markdown("""
-            <div class='panel-title'><i class='bx bx-book-open'></i> Latar Belakang</div>
-            <p style='color: #475569; font-size: 15px; line-height: 1.8; text-align: justify; margin-bottom: 0;'>
-                Tanaman nilam (<i>Pogostemon cablin Benth.</i>) merupakan komoditas penghasil minyak atsiri (<i>patchouli oil</i>) yang krusial bagi industri parfum dunia. Namun, kualitas minyak sangat bergantung pada ketepatan identifikasi varietas unggul di lapangan yang selama ini dilakukan secara manual dan rentan kesalahan subjektif. Sistem <b>Machine Learning</b> ini mengimplementasikan ekstraksi fitur tingkat lanjut pada citra daun untuk membedakan varietas secara otomatis dan presisi tinggi.
-            </p>
-            """, unsafe_allow_html=True)
+        st.markdown("""
+        <div class='panel-title'><i class='bx bx-book-open'></i> Latar Belakang</div>
+        <p style='color: #475569; font-size: 15px; line-height: 1.8; text-align: justify; margin-bottom: 0;'>
+            Tanaman nilam (<i>Pogostemon cablin Benth.</i>) merupakan komoditas penghasil minyak atsiri (<i>patchouli oil</i>) yang krusial bagi industri parfum dunia. Namun, kualitas minyak sangat bergantung pada ketepatan identifikasi varietas unggul di lapangan yang selama ini dilakukan secara manual dan rentan kesalahan subjektif. Sistem <b>Machine Learning</b> ini mengimplementasikan ekstraksi fitur tingkat lanjut pada citra daun untuk membedakan varietas secara otomatis dan presisi tinggi.
+        </p>
+        """, unsafe_allow_html=True)
             
     with col_bg2:
-        with st.container(border=True):
-            st.markdown("""
-            <div class='panel-title'><i class='bx bx-bullseye'></i> Tujuan Utama</div>
-            <ul style='color: #475569; font-size: 15px; line-height: 1.8; padding-left: 20px; margin-bottom: 0;'>
-                <li>Mengekstraksi fitur visual daun menggunakan kombinasi metode <b>GLCM</b> (tekstur) dan <b>HSV</b> (warna ruang).</li>
-                <li>Membangun model klasifikasi dengan <b>Support Vector Machine (SVM)</b> dengan akurasi teruji.</li>
-                <li>Menyediakan instrumen <i>dashboard</i> prediktif untuk mempermudah standarisasi bibit bagi praktisi industri dan petani.</li>
-            </ul>
-            """, unsafe_allow_html=True)
+        st.markdown("""
+        <div class='panel-title'><i class='bx bx-bullseye'></i> Tujuan Utama</div>
+        <ul style='color: #475569; font-size: 15px; line-height: 1.8; padding-left: 20px; margin-bottom: 0;'>
+            <li>Mengekstraksi fitur visual daun menggunakan kombinasi metode <b>GLCM</b> (tekstur) dan <b>HSV</b> (warna ruang).</li>
+            <li>Membangun model klasifikasi dengan <b>Support Vector Machine (SVM)</b> dengan akurasi teruji.</li>
+            <li>Menyediakan instrumen <i>dashboard</i> prediktif untuk mempermudah standarisasi bibit bagi praktisi industri dan petani.</li>
+        </ul>
+        """, unsafe_allow_html=True)
             
     st.markdown("<br>", unsafe_allow_html=True)
     
@@ -295,29 +293,26 @@ with main_container:
                 col1, col2, col3 = st.columns([1, 1.3, 1], gap="medium")
             
                 with col1:
-                    with st.container(border=True):
-                        st.markdown("<div class='panel-title'><i class='bx bx-image'></i> Input Citra</div>", unsafe_allow_html=True)
-                        st.image(img_pil, use_container_width=True, caption=f"Resolusi Asli: {original_size[0]}x{original_size[1]}px")
+                    st.markdown("<div class='panel-title'><i class='bx bx-image'></i> Input Citra</div>", unsafe_allow_html=True)
+                    st.image(img_pil, use_container_width=True, caption=f"Resolusi Asli: {original_size[0]}x{original_size[1]}px")
                 
                 with col2:
-                    with st.container(border=True):
-                        html_res = f"""
-                        <div class='panel-title'><i class='bx bx-target-lock'></i> Hasil Deteksi</div>
-                        <div class='result-display'>
-                            <div style="font-family:'JetBrains Mono', monospace; font-size:12px; color:#64748b; background:#f1f5f9; display:inline-block; padding:4px 10px; border-radius:6px; margin-bottom: 5px;">class_index = {prediction}</div>
-                            <div class='r-class'>{predicted_class}</div>
-                            <div class='r-conf' style="margin-bottom: 10px;"><i class='bx bxs-bolt' style='color:#ffffff !important;'></i> Confidence Rate: {confidence:.2f}%</div>
-                        </div>
-                        """
-                        st.markdown(html_res.replace('\n', ' '), unsafe_allow_html=True)
+                    html_res = f"""
+                    <div class='panel-title'><i class='bx bx-target-lock'></i> Hasil Deteksi</div>
+                    <div class='result-display'>
+                        <div style="font-family:'JetBrains Mono', monospace; font-size:12px; color:#64748b; background:#f1f5f9; display:inline-block; padding:4px 10px; border-radius:6px; margin-bottom: 5px;">class_index = {prediction}</div>
+                        <div class='r-class'>{predicted_class}</div>
+                        <div class='r-conf' style="margin-bottom: 10px;"><i class='bx bxs-bolt' style='color:#ffffff !important;'></i> Confidence Rate: {confidence:.2f}%</div>
+                    </div>
+                    """
+                    st.markdown(html_res.replace('\n', ' '), unsafe_allow_html=True)
                 
                 with col3:
-                    with st.container(border=True):
-                        st.markdown("<div class='panel-title'><i class='bx bx-line-chart'></i> Probabilitas</div>", unsafe_allow_html=True)
-                        labels_js = json.dumps(list(classes.values()))
-                        data_js = json.dumps([round(p * 100, 2) for p in probs])
-                        html_chart = f"""<!DOCTYPE html><html><head><script src="https://cdn.jsdelivr.net/npm/chart.js"></script><style>body {{ margin: 0; padding-top: 10px; background: transparent; }} .chart-wrap {{ width: 100%; max-width: 300px; margin: 0 auto; }}</style></head><body><div class="chart-wrap"><canvas id="pChart"></canvas></div><script>const ctx = document.getElementById('pChart').getContext('2d'); const gradient = ctx.createLinearGradient(0, 0, 300, 0); gradient.addColorStop(0, '#10b981'); gradient.addColorStop(1, '#3b82f6'); new Chart(ctx, {{ type: 'bar', data: {{ labels: {labels_js}, datasets: [{{ data: {data_js}, backgroundColor: gradient, borderRadius: 8, hoverBackgroundColor: '#0f172a' }}] }}, options: {{ responsive: true, indexAxis: 'y', scales: {{ x: {{ max: 100, ticks: {{ font: {{ family: 'monospace', size: 11 }} }}, grid: {{ display: false }} }}, y: {{ ticks: {{ font: {{ family: 'sans-serif', size: 13, weight: 'bold' }}, color: '#475569' }}, grid: {{ display: false }} }} }}, plugins: {{ legend: {{ display: false }}, tooltip: {{ padding: 12, cornerRadius: 8, titleFont: {{ size: 14 }}, bodyFont: {{ size: 14 }} }} }} }} }});</script></body></html>"""
-                        components.html(html_chart, height=280)
+                    st.markdown("<div class='panel-title'><i class='bx bx-line-chart'></i> Probabilitas</div>", unsafe_allow_html=True)
+                    labels_js = json.dumps(list(classes.values()))
+                    data_js = json.dumps([round(p * 100, 2) for p in probs])
+                    html_chart = f"""<!DOCTYPE html><html><head><script src="https://cdn.jsdelivr.net/npm/chart.js"></script><style>body {{ margin: 0; padding-top: 10px; background: transparent; }} .chart-wrap {{ width: 100%; max-width: 300px; margin: 0 auto; }}</style></head><body><div class="chart-wrap"><canvas id="pChart"></canvas></div><script>const ctx = document.getElementById('pChart').getContext('2d'); const gradient = ctx.createLinearGradient(0, 0, 300, 0); gradient.addColorStop(0, '#10b981'); gradient.addColorStop(1, '#3b82f6'); new Chart(ctx, {{ type: 'bar', data: {{ labels: {labels_js}, datasets: [{{ data: {data_js}, backgroundColor: gradient, borderRadius: 8, hoverBackgroundColor: '#0f172a' }}] }}, options: {{ responsive: true, indexAxis: 'y', scales: {{ x: {{ max: 100, ticks: {{ font: {{ family: 'monospace', size: 11 }} }}, grid: {{ display: false }} }}, y: {{ ticks: {{ font: {{ family: 'sans-serif', size: 13, weight: 'bold' }}, color: '#475569' }}, grid: {{ display: false }} }} }}, plugins: {{ legend: {{ display: false }}, tooltip: {{ padding: 12, cornerRadius: 8, titleFont: {{ size: 14 }}, bodyFont: {{ size: 14 }} }} }} }} }});</script></body></html>"""
+                    components.html(html_chart, height=280)
                 
                 info_html = f"""
                 <div style="background: #ffffff; padding: 35px; border-radius: 24px; box-shadow: 0 15px 40px -5px rgba(15, 23, 42, 0.1); border: 1px solid #e2e8f0; margin-bottom: 25px; margin-top: 10px;">
