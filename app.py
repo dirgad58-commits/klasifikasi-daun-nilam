@@ -82,6 +82,21 @@ html, body, [class*="css"] { font-family: 'Poppins', sans-serif; color: #1e293b;
 .stTabs [data-baseweb="tab"] { color: #64748b !important; border: none !important; font-family: 'Montserrat', sans-serif !important; font-weight: 700 !important; font-size: 13px !important; background: transparent !important; padding: 10px 24px !important; border-radius: 50px !important; transition: all 0.3s;}
 .stTabs [data-baseweb="tab"]:hover { color: #0b4d3c !important; }
 .stTabs [data-baseweb="tab"][aria-selected="true"] { color: #ffffff !important; background: #0b4d3c !important; box-shadow: 0 6px 15px rgba(11, 77, 60, 0.35) !important; transform: translateY(-2px);}
+
+/* --- RESPONSIVE MOBILE --- */
+@media (max-width: 768px) {
+    .app-title-large { font-size: 32px !important; letter-spacing: 1px !important; }
+    .app-title-small { font-size: 14px !important; letter-spacing: 2px !important; }
+    .app-header { padding: 30px 20px !important; }
+    .header-leaf-decoration { display: none !important; }
+    .r-class { font-size: 24px !important; }
+    [data-testid="column"] { padding: 15px !important; }
+    .panel-card { padding: 20px !important; }
+    .panel-title { font-size: 14px !important; padding: 6px 15px !important; }
+    .stFileUploader > div > div { padding: 30px 10px !important; }
+    .stTabs [data-baseweb="tab-list"] { display: flex; flex-direction: column; gap: 5px; border-radius: 20px !important; }
+    .stTabs [data-baseweb="tab"] { width: 100% !important; text-align: center; }
+}
 </style>"""
 st.markdown(html_css.replace('\n', ' '), unsafe_allow_html=True)
 
