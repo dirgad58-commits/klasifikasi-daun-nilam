@@ -235,17 +235,18 @@ with main_container:
         st.markdown("""
         <div class='panel-title'><i class='bx bx-book-open'></i> Latar Belakang</div>
         <p style='color: #475569; font-size: 15px; line-height: 1.8; text-align: justify; margin-bottom: 0;'>
-            Tanaman nilam (<i>Pogostemon cablin Benth.</i>) merupakan komoditas penghasil minyak atsiri (<i>patchouli oil</i>) yang krusial bagi industri parfum dunia. Namun, kualitas minyak sangat bergantung pada ketepatan identifikasi varietas unggul di lapangan yang selama ini dilakukan secara manual dan rentan kesalahan subjektif. Sistem <b>Machine Learning</b> ini mengimplementasikan ekstraksi fitur tingkat lanjut pada citra daun untuk membedakan varietas secara otomatis dan presisi tinggi.
+            Tanaman Nilam (<i>Pogostemon cablin Benth.</i>) merupakan komoditas perkebunan unggulan penghasil minyak atsiri di Indonesia yang memiliki nilai ekonomi tinggi. Dalam budidayanya, terdapat varietas dengan karakteristik morfologi berbeda, yaitu <b>Nilam Biasa, Nilam Batik, dan Nilam Seledri</b>. Identifikasi varietas yang tepat sangat penting karena setiap varietas memiliki produktivitas dan kualitas minyak yang berbeda. Namun, identifikasi manual oleh petani rentan terhadap kesalahan karena kemiripan bentuk daun. Oleh karena itu, diperlukan pemanfaatan teknologi pengolahan citra digital untuk klasifikasi otomatis yang cepat dan konsisten.
         </p>
         """, unsafe_allow_html=True)
             
     with col_bg2:
         st.markdown("""
-        <div class='panel-title'><i class='bx bx-bullseye'></i> Tujuan Utama</div>
+        <div class='panel-title'><i class='bx bx-bullseye'></i> Tujuan Penelitian</div>
         <ul style='color: #475569; font-size: 15px; line-height: 1.8; padding-left: 20px; margin-bottom: 0;'>
-            <li>Mengekstraksi fitur visual daun menggunakan kombinasi metode <b>GLCM</b> (tekstur) dan <b>HSV</b> (warna ruang).</li>
-            <li>Membangun model klasifikasi dengan <b>Support Vector Machine (SVM)</b> dengan akurasi teruji.</li>
-            <li>Menyediakan instrumen <i>dashboard</i> prediktif untuk mempermudah standarisasi bibit bagi praktisi industri dan petani.</li>
+            <li>Mengembangkan sistem klasifikasi varietas daun nilam berbasis pengolahan citra digital secara otomatis dan objektif.</li>
+            <li>Mengekstraksi fitur warna menggunakan <b>HSV (Hue, Saturation, Value)</b> untuk merepresentasikan persepsi warna secara akurat.</li>
+            <li>Mengekstraksi fitur tekstur menggunakan metode <b>GLCM (Gray Level Co-occurrence Matrix)</b> dari citra <i>grayscale</i>.</li>
+            <li>Mengimplementasikan algoritma <b>Support Vector Machine (SVM)</b> yang dioptimasi dengan GridSearchCV untuk mencapai akurasi maksimal.</li>
         </ul>
         """, unsafe_allow_html=True)
             
