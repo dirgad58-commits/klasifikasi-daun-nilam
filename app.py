@@ -38,6 +38,11 @@ html, body, [class*="css"] { font-family: 'Poppins', sans-serif; color: #1e293b;
 /* --- SIDEBAR ACADEMIC THEME --- */
 [data-testid="stSidebar"] { background-color: #0b4d3c !important; border-right: 6px solid #eab308 !important; box-shadow: 5px 0 15px rgba(0,0,0,0.1); z-index: 9999;}
 [data-testid="stSidebar"] p, [data-testid="stSidebar"] div, [data-testid="stSidebar"] label { color: #f8fafc; }
+
+/* Sidebar Toggle Button (Make it extremely visible) */
+[data-testid="collapsedControl"] { background-color: #0b4d3c !important; border-radius: 50% !important; color: white !important; box-shadow: 0 4px 12px rgba(11, 77, 60, 0.4) !important; top: 15px !important; left: 15px !important; z-index: 99999; transition: all 0.3s ease; }
+[data-testid="collapsedControl"]:hover { background-color: #eab308 !important; transform: scale(1.1); }
+[data-testid="collapsedControl"] svg { fill: #ffffff !important; color: #ffffff !important; }
 [data-testid="stSidebar"] span:not(.sb-val) { color: #f8fafc; }
 .sidebar-box { background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); padding: 22px; border-radius: 16px; margin-bottom: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
 .sb-title { font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 800; color: #eab308 !important; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;}
