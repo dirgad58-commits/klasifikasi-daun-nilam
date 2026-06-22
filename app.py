@@ -57,8 +57,8 @@ html, body, [class*="css"] { font-family: 'Poppins', sans-serif; color: #1e293b;
 .header-leaf-decoration { position: absolute; right: 0px; top: -30px; height: 260px; object-fit: contain; opacity: 1; filter: drop-shadow(-15px 20px 20px rgba(0,0,0,0.6)); z-index: 1; transform: rotate(-5deg);}
 
 /* --- KARTU KONTEN POSTER --- */
-[data-testid="column"] > div[data-testid="stVerticalBlock"] { background: #ffffff !important; border-radius: 20px !important; border: 1px solid #e2e8f0 !important; box-shadow: 0 10px 25px rgba(0,0,0,0.05) !important; padding: 25px !important; position: relative; overflow: hidden; margin-top: 10px;}
-[data-testid="column"] > div[data-testid="stVerticalBlock"]::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 6px; background: #115e41; }
+[data-testid="column"] { background: #ffffff !important; border-radius: 20px !important; border: 1px solid #e2e8f0 !important; box-shadow: 0 10px 25px rgba(0,0,0,0.05) !important; padding: 25px !important; position: relative; overflow: hidden; margin-top: 10px;}
+[data-testid="column"]::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 6px; background: #115e41; }
 
 .panel-card { background: #ffffff; border-radius: 20px; border: 1px solid #e2e8f0; padding: 30px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); position: relative; overflow: hidden; margin-top: 10px;}
 .panel-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 6px; background: #115e41; }
